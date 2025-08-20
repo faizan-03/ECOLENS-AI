@@ -20,6 +20,9 @@
     |-- package.json
     |-- postcss.config.js
     |-- public
+        |-- manifest.json
+        |-- robots.txt
+        |-- sitemap.xml
         |-- vite.svg
     |-- README.md
     |-- src
