@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {}
       <section className={`bg-gradient-to-b ${isDarkMode ? 'from-green-900/20 to-transparent' : 'from-green-50 to-transparent'} py-20 transition-colors duration-300`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className={`text-4xl md:text-6xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'} mb-6 transition-colors duration-300`}>
@@ -100,7 +100,7 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Upload CTA */}
+            {}
             <Card className={`text-center ${isDarkMode ? 'border-green-800 hover:border-green-700' : 'border-green-200 hover:border-green-300'} transition-all duration-300 hover:shadow-md`}>
               <CardHeader>
                 <div className={`mx-auto w-16 h-16 ${isDarkMode ? 'bg-green-900/40' : 'bg-green-100'} rounded-full flex items-center justify-center mb-4 transition-colors duration-300`}>
@@ -121,7 +121,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            {/* Actions CTA */}
+            {}
             <Card className={`text-center ${isDarkMode ? 'border-blue-800 hover:border-blue-700' : 'border-blue-200 hover:border-blue-300'} transition-all duration-300 hover:shadow-md`}>
               <CardHeader>
                 <div className={`mx-auto w-16 h-16 ${isDarkMode ? 'bg-blue-900/40' : 'bg-blue-100'} rounded-full flex items-center justify-center mb-4 transition-colors duration-300`}>

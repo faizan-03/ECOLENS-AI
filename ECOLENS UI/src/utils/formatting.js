@@ -1,4 +1,4 @@
-// Format large numbers with proper units
+
 export const formatNumber = (num) => {
   if (num >= 1000000) {
     return (num / 1000000).toFixed(1) + 'M'
@@ -9,7 +9,7 @@ export const formatNumber = (num) => {
   return num.toString()
 }
 
-// Format CO2 values
+
 export const formatCO2 = (kg) => {
   if (kg >= 1000) {
     return `${(kg / 1000).toFixed(1)} tons`
@@ -17,17 +17,17 @@ export const formatCO2 = (kg) => {
   return `${kg.toFixed(0)} kg`
 }
 
-// Format temperature with degree symbol
+
 export const formatTemperature = (temp) => {
   return `${temp}°C`
 }
 
-// Format percentage
+
 export const formatPercentage = (value, decimals = 0) => {
   return `${value.toFixed(decimals)}%`
 }
 
-// Convert file size to human readable format
+
 export const formatFileSize = (bytes) => {
   if (bytes === 0) return '0 Bytes'
   
@@ -38,10 +38,10 @@ export const formatFileSize = (bytes) => {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
 }
 
-// Validate image file
+
 export const validateImageFile = (file) => {
   const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp']
-  const maxSize = 10 * 1024 * 1024 // 10MB
+  const maxSize = 10 * 1024 * 1024 
   
   if (!validTypes.includes(file.type)) {
     return { valid: false, error: 'Please select a valid image file (JPEG, PNG, GIF, WebP)' }
@@ -54,7 +54,7 @@ export const validateImageFile = (file) => {
   return { valid: true }
 }
 
-// Validate URL
+
 export const validateImageUrl = (url) => {
   try {
     new URL(url)
@@ -64,7 +64,7 @@ export const validateImageUrl = (url) => {
   }
 }
 
-// Calculate color intensity based on value
+
 export const getIntensityColor = (value, max, colors = ['green', 'yellow', 'red']) => {
   const intensity = Math.min(value / max, 1)
   
@@ -73,7 +73,7 @@ export const getIntensityColor = (value, max, colors = ['green', 'yellow', 'red'
   return colors[2]
 }
 
-// Debounce function
+
 export const debounce = (func, wait) => {
   let timeout
   return function executedFunction(...args) {
@@ -86,12 +86,12 @@ export const debounce = (func, wait) => {
   }
 }
 
-// Deep clone object
+
 export const deepClone = (obj) => {
   return JSON.parse(JSON.stringify(obj))
 }
 
-// Generate unique ID
+
 export const generateId = () => {
   return Date.now().toString(36) + Math.random().toString(36).substr(2)
 }

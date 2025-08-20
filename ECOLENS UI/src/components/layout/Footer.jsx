@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo and Description */}
+          {}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-3">
               <Leaf className={`h-6 w-6 ${isDarkMode ? 'text-green-400' : 'text-green-500'}`} />
@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Connect */}
+          {}
           <div>
             <h3 className={`text-sm font-medium ${isDarkMode ? 'text-gray-200' : 'text-gray-900'} mb-3`}>Connect</h3>
             <div className="flex space-x-4">

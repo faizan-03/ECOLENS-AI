@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
-/* Custom component styles */
+
 .gradient-bg {
   background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
 }
@@ -13,7 +13,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Chart animations */
+
 .recharts-wrapper {
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -29,7 +29,7 @@
   }
 }
 
-/* Custom scrollbar */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -47,12 +47,12 @@
   background: #22c55e;
 }
 
-/* Button cursor pointer */
+
 button {
   cursor: pointer;
 }
 
-/* Navbar animation */
+
 .nav-item {
   position: relative;
   overflow: hidden;
@@ -74,7 +74,7 @@ button {
   left: 0;
 }
 
-/* Dark mode styles */
+
 :root {
   --bg-primary: #ffffff;
   --text-primary: #1a202c;
@@ -105,7 +105,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Smooth transitions for dark mode changes */
+
 * {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-duration: 0.3s;

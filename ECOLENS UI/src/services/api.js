@@ -10,10 +10,10 @@ const api = axios.create({
   },
 })
 
-// Request interceptor
+
 api.interceptors.request.use(
   (config) => {
-    // Add auth token if available
+    
     const token = localStorage.getItem('authToken')
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
@@ -23,11 +23,11 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 )
 
-// Response interceptor
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Handle common errors
+    
     if (error.response?.status === 401) {
       localStorage.removeItem('authToken')
       window.location.href = '/login'

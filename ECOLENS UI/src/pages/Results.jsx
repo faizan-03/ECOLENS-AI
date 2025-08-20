@@ -8,7 +8,7 @@ import ThemeContext from '../context/ThemeContext'
 
 const Results = () => {
   const { isDarkMode } = useContext(ThemeContext)
-  // Sample data for charts
+  
   const emissionData = [
     { year: '2020', emissions: 1200, target: 1000 },
     { year: '2025', emissions: 1100, target: 800 },
@@ -28,7 +28,7 @@ const Results = () => {
   return (
     <div className="min-h-screen py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {}
         <div className="text-center mb-8">
           <h1 className={`text-3xl md:text-4xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-gray-900'} mb-4`}>
             Your Climate Impact Report
@@ -38,7 +38,7 @@ const Results = () => {
           </p>
         </div>
 
-        {/* Action Buttons */}
+        {}
         <div className="flex flex-wrap gap-4 justify-center mb-8">
           <Button variant="outline">
             <Download className="h-4 w-4 mr-2" />
@@ -55,7 +55,7 @@ const Results = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Key Metrics */}
+          {}
           <div className="space-y-6">
             <Card>
               <CardHeader>
@@ -131,9 +131,9 @@ const Results = () => {
             </Card>
           </div>
 
-          {/* Charts and Analysis */}
+          {}
           <div className="lg:col-span-2 space-y-6">
-            {/* Emissions Projection */}
+            {}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -172,7 +172,7 @@ const Results = () => {
               </CardContent>
             </Card>
 
-            {/* Category Breakdown */}
+            {}
             <Card>
               <CardHeader>
                 <CardTitle>Impact by Category</CardTitle>
@@ -196,7 +196,7 @@ const Results = () => {
               </CardContent>
             </Card>
 
-            {/* Recommendations */}
+            {}
             <Card>
               <CardHeader>
                 <CardTitle>Personalized Recommendations</CardTitle>
@@ -254,7 +254,7 @@ const Results = () => {
               </CardContent>
             </Card>
 
-            {/* Next Steps */}
+            {}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">

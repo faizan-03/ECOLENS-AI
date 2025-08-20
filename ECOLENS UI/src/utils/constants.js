@@ -1,4 +1,4 @@
-// Environment variables with defaults
+
 export const ENV = {
   API_URL: import.meta.env.VITE_API_URL || 'http://localhost:3000/api',
   CV_SERVICE_URL: import.meta.env.VITE_CV_SERVICE_URL || 'http://localhost:5000',
@@ -6,7 +6,7 @@ export const ENV = {
   VERSION: import.meta.env.VITE_APP_VERSION || '1.0.0',
 }
 
-// API endpoints
+
 export const API_ENDPOINTS = {
   CV: {
     ANALYZE: '/cv/analyze',
@@ -27,17 +27,17 @@ export const API_ENDPOINTS = {
   },
 }
 
-// CO2 emission factors (kg CO2 per unit)
+
 export const EMISSION_FACTORS = {
-  CAR_KM: 0.192, // kg CO2 per km for average car
-  FLIGHT_KM: 0.255, // kg CO2 per km for domestic flight
-  ELECTRICITY_KWH: 0.5, // kg CO2 per kWh (varies by region)
-  GAS_M3: 2.03, // kg CO2 per cubic meter of natural gas
-  MEAT_KG: 27, // kg CO2 per kg of beef
-  TREE_ANNUAL_ABSORPTION: 22, // kg CO2 absorbed per tree per year
+  CAR_KM: 0.192, 
+  FLIGHT_KM: 0.255, 
+  ELECTRICITY_KWH: 0.5, 
+  GAS_M3: 2.03, 
+  MEAT_KG: 27, 
+  TREE_ANNUAL_ABSORPTION: 22, 
 }
 
-// Climate scenarios
+
 export const CLIMATE_SCENARIOS = {
   OPTIMISTIC: {
     id: 'optimistic',
@@ -62,14 +62,14 @@ export const CLIMATE_SCENARIOS = {
   },
 }
 
-// File upload constraints
+
 export const FILE_CONSTRAINTS = {
-  MAX_SIZE: 10 * 1024 * 1024, // 10MB
+  MAX_SIZE: 10 * 1024 * 1024, 
   ALLOWED_TYPES: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'],
   ALLOWED_EXTENSIONS: ['.jpg', '.jpeg', '.png', '.gif', '.webp'],
 }
 
-// Chart colors
+
 export const CHART_COLORS = {
   PRIMARY: '#22c55e',
   SECONDARY: '#3b82f6',
@@ -79,24 +79,24 @@ export const CHART_COLORS = {
   INFO: '#06b6d4',
 }
 
-// Default chart configuration
+
 export const DEFAULT_CHART_CONFIG = {
   margin: { top: 20, right: 30, left: 20, bottom: 5 },
   animationDuration: 1000,
 }
 
-// Time periods for simulation
+
 export const TIME_PERIODS = [2030, 2040, 2050]
 
-// Global warming potentials (relative to CO2)
+
 export const GWP_VALUES = {
   CO2: 1,
-  CH4: 25, // Methane
-  N2O: 298, // Nitrous oxide
-  SF6: 22800, // Sulfur hexafluoride
+  CH4: 25, 
+  N2O: 298, 
+  SF6: 22800, 
 }
 
-// Application states
+
 export const APP_STATES = {
   IDLE: 'idle',
   LOADING: 'loading',
@@ -104,7 +104,7 @@ export const APP_STATES = {
   ERROR: 'error',
 }
 
-// Local storage keys
+
 export const STORAGE_KEYS = {
   AUTH_TOKEN: 'authToken',
   USER_PREFERENCES: 'userPreferences',

@@ -1,13 +1,13 @@
-// Climate Analysis Service - AI-powered image analysis and CO2 calculations
+
 
 const API_BASE_URL = 'http://localhost:3001/api'
 
-// Mock AI analysis function (replace with actual API call)
+
 export const analyzeImageForClimate = async () => {
-  // Simulate API delay
+  
   await new Promise(resolve => setTimeout(resolve, 2000))
   
-  // Mock AI analysis result - in real implementation, this would call your ML backend
+  
   const mockAnalysis = {
     detectedItems: [
       { item: 'SUV vehicle', confidence: 0.95, co2_impact: 2.3 },
@@ -34,8 +34,8 @@ export const analyzeImageForClimate = async () => {
     },
     personal_footprint: {
       annual_co2_tons: 4.6,
-      global_percentile: 72, // Above 72% of global population
-      country_percentile: 58, // Above 58% in their country
+      global_percentile: 72, 
+      country_percentile: 58, 
       category: 'above_average'
     },
     improvement_suggestions: [
@@ -71,7 +71,7 @@ export const analyzeImageForClimate = async () => {
   return mockAnalysis
 }
 
-// Calculate climate projections based on user data
+
 export const generateClimateProjections = (userAnalysis, scenario, targetYear) => {
   const baseFootprint = userAnalysis.personal_footprint.annual_co2_tons
   
@@ -104,7 +104,7 @@ export const generateClimateProjections = (userAnalysis, scenario, targetYear) =
   
   const projection = scenarioCalculations[scenario]
   
-  // Calculate global impact equivalents
+  
   const globalImpact = {
     temperature_rise: 1.2 + (projection.co2_trajectory - 2) * 0.08,
     sea_level_rise: 15 + (projection.co2_trajectory - 2) * 2.5,
@@ -123,7 +123,7 @@ export const generateClimateProjections = (userAnalysis, scenario, targetYear) =
   }
 }
 
-// Store analysis results in localStorage for cross-page access
+
 export const storeAnalysisResults = (analysisData) => {
   localStorage.setItem('ecolens_climate_analysis', JSON.stringify({
     ...analysisData,
@@ -132,14 +132,14 @@ export const storeAnalysisResults = (analysisData) => {
   }))
 }
 
-// Retrieve stored analysis results
+
 export const getStoredAnalysis = () => {
   const stored = localStorage.getItem('ecolens_climate_analysis')
   if (!stored) return null
   
   const data = JSON.parse(stored)
   
-  // Check if data is older than 24 hours
+  
   const isExpired = Date.now() - data.timestamp > 24 * 60 * 60 * 1000
   if (isExpired) {
     localStorage.removeItem('ecolens_climate_analysis')
@@ -149,7 +149,7 @@ export const getStoredAnalysis = () => {
   return data
 }
 
-// Clear stored analysis
+
 export const clearAnalysisResults = () => {
   localStorage.removeItem('ecolens_climate_analysis')
 }

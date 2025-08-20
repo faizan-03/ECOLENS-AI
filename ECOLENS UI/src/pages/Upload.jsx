@@ -9,7 +9,7 @@ import ThemeContext from '../context/ThemeContext'
 
 const Upload = () => {
   const { isDarkMode } = useContext(ThemeContext)
-  const [uploadMethod, setUploadMethod] = useState('file') // 'file' or 'url'
+  const [uploadMethod, setUploadMethod] = useState('file') 
   const [selectedFile, setSelectedFile] = useState(null)
   const [imageUrl, setImageUrl] = useState('')
   const [preview, setPreview] = useState(null)
@@ -62,17 +62,17 @@ const Upload = () => {
     setAnalysisStep(0)
     
     try {
-      // Step through analysis stages with delays for UX
+      
       for (let i = 0; i < analysisSteps.length; i++) {
         setAnalysisStep(i)
         await new Promise(resolve => setTimeout(resolve, 800))
       }
       
-      // Perform actual AI analysis
+      
       const imageData = uploadMethod === 'file' ? selectedFile : imageUrl
       const result = await analyzeImageForClimate(imageData)
       
-      // Store results for other pages to access
+      
       storeAnalysisResults(result)
       
       setAnalysis(result)
@@ -109,7 +109,7 @@ const Upload = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Upload Section */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle>Choose Upload Method</CardTitle>
@@ -118,7 +118,7 @@ const Upload = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Method Selection */}
+              {}
               <div className="flex space-x-4">
                 <Button
                   variant={uploadMethod === 'file' ? 'default' : 'outline'}
@@ -138,7 +138,7 @@ const Upload = () => {
                 </Button>
               </div>
 
-              {/* File Upload */}
+              {}
               {uploadMethod === 'file' && (
                 <div className="space-y-4">
                   <div
@@ -163,7 +163,7 @@ const Upload = () => {
                 </div>
               )}
 
-              {/* URL Input */}
+              {}
               {uploadMethod === 'url' && (
                 <div className="space-y-4">
                   <input
@@ -176,7 +176,7 @@ const Upload = () => {
                 </div>
               )}
 
-              {/* Preview */}
+              {}
               {preview && (
                 <div className="space-y-4">
                   <div className="relative">
@@ -214,7 +214,7 @@ const Upload = () => {
             </CardContent>
           </Card>
 
-          {/* Results Section */}
+          {}
           <Card>
             <CardHeader>
               <CardTitle>Analysis Results</CardTitle>
@@ -244,7 +244,7 @@ const Upload = () => {
 
               {analysis && !analysis.error && (
                 <div className="space-y-6">
-                  {/* Personal Carbon Footprint */}
+                  {}
                   <div className={`p-6 rounded-lg border ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-gradient-to-r from-green-50 to-blue-50 border'}`}>
                     <h3 className={`text-lg font-semibold mb-3 flex items-center ${isDarkMode ? 'text-white' : ''}`}>
                       <CheckCircle className={`h-5 w-5 ${isDarkMode ? 'text-green-400' : 'text-green-500'} mr-2`} />
@@ -272,7 +272,7 @@ const Upload = () => {
                     </div>
                   </div>
 
-                  {/* Detected Items */}
+                  {}
                   <div>
                     <h3 className={`font-semibold mb-3 ${isDarkMode ? 'text-white' : ''}`}>AI-Detected Lifestyle Elements</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -295,7 +295,7 @@ const Upload = () => {
                     </div>
                   </div>
 
-                  {/* Improvement Suggestions */}
+                  {}
                   <div>
                     <h3 className={`font-semibold mb-3 ${isDarkMode ? 'text-white' : ''}`}>Personalized Improvement Suggestions</h3>
                     <div className="space-y-3">
@@ -325,7 +325,7 @@ const Upload = () => {
                     </div>
                   </div>
 
-                  {/* Navigation Buttons */}
+                  {}
                   <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t">
                     <Button 
                       onClick={navigateToSimulation}

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { STORAGE_KEYS } from '../utils/constants'
 
 export const useLocalStorage = (key, initialValue) => {
-  // Get value from localStorage or use initial value
+  
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = window.localStorage.getItem(key)
@@ -13,7 +13,7 @@ export const useLocalStorage = (key, initialValue) => {
     }
   })
 
-  // Update localStorage when state changes
+  
   const setValue = (value) => {
     try {
       const valueToStore = value instanceof Function ? value(storedValue) : value
@@ -45,7 +45,7 @@ export const useTheme = () => {
 
 export const useUserPreferences = () => {
   const [preferences, setPreferences] = useLocalStorage(STORAGE_KEYS.USER_PREFERENCES, {
-    units: 'metric', // 'metric' or 'imperial'
+    units: 'metric', 
     notifications: true,
     dataSharing: false,
     language: 'en',

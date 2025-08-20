@@ -14,13 +14,13 @@ const Simulation = () => {
 
   const years = [2030, 2040, 2050]
 
-  // Load stored analysis data on component mount
+  
   useEffect(() => {
     const analysis = getStoredAnalysis()
     if (analysis) {
       setStoredAnalysis(analysis)
     } else {
-      // Mock data if no analysis found (for demo purposes)
+      
       setStoredAnalysis({
         personal_footprint: { annual_co2_tons: 4.6, global_percentile: 72 },
         improvement_suggestions: [
@@ -78,7 +78,7 @@ const Simulation = () => {
     }
   ]
 
-  // Trigger animation when scenario changes
+  
   useEffect(() => {
     setIsAnimating(true)
     const timer = setTimeout(() => setIsAnimating(false), 300)
@@ -97,7 +97,7 @@ const Simulation = () => {
       }
     }
     
-    // Use actual user data from image analysis
+    
     const baseUserCO2 = storedAnalysis.personal_footprint.annual_co2_tons
     
     const yearMultipliers = {
@@ -108,19 +108,19 @@ const Simulation = () => {
 
     const scenarioCalculations = {
       user_current: {
-        // User's current trajectory with slight increase over time
+        
         annual_co2: baseUserCO2 * yearMultipliers[selectedYear],
         temp_contribution: (baseUserCO2 / 1000) * 0.1,
         global_impact_rank: baseUserCO2 > 4.8 ? 'Above Global Average' : 'Below Global Average'
       },
       user_improved: {
-        // After implementing AI suggestions (70% reduction)
+        
         annual_co2: (baseUserCO2 * 0.3) * yearMultipliers[selectedYear],
         temp_contribution: ((baseUserCO2 * 0.3) / 1000) * 0.1,
         global_impact_rank: 'Well Below Average'
       },
       no_change: {
-        // Lifestyle degradation over time
+        
         annual_co2: baseUserCO2 * yearMultipliers[selectedYear] * 1.3,
         temp_contribution: (baseUserCO2 * 1.3 / 1000) * 0.1,
         global_impact_rank: 'Well Above Average'
@@ -133,7 +133,7 @@ const Simulation = () => {
       personalCO2: current.annual_co2.toFixed(1),
       temperatureContribution: current.temp_contribution.toFixed(4),
       globalRank: current.global_impact_rank,
-      // Convert personal impact to global equivalents (simplified)
+      
       globalTemp: (1.2 + (current.annual_co2 - 2) * 0.1).toFixed(1),
       seaLevel: Math.round(15 + (current.annual_co2 - 2) * 3),
       co2Level: Math.round(410 + (current.annual_co2 - 2) * 8)

@@ -1,11 +1,8 @@
-/**
- * Actions Service - Manages climate action plans and progress tracking
- * Uses localStorage for persistence (can be upgraded to backend API later)
- */
+
 
 const ACTIONS_STORAGE_KEY = 'ecolens_climate_actions'
 
-// Action categories with suggested impact levels
+
 export const ACTION_CATEGORIES = {
   TRANSPORTATION: {
     name: 'Transportation',
@@ -34,7 +31,7 @@ export const ACTION_CATEGORIES = {
   }
 }
 
-// Default action templates
+
 export const ACTION_TEMPLATES = [
   {
     title: 'Use Public Transportation',
@@ -78,9 +75,7 @@ export const ACTION_TEMPLATES = [
   }
 ]
 
-/**
- * Create a new action plan
- */
+
 export const createAction = (actionData) => {
   const actions = getStoredActions()
   const newAction = {
@@ -89,7 +84,7 @@ export const createAction = (actionData) => {
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     progress: 0,
-    status: 'active', // active, completed, paused
+    status: 'active', 
     progressEntries: []
   }
   
@@ -98,9 +93,7 @@ export const createAction = (actionData) => {
   return newAction
 }
 
-/**
- * Get all stored actions
- */
+
 export const getStoredActions = () => {
   try {
     const stored = localStorage.getItem(ACTIONS_STORAGE_KEY)
@@ -111,9 +104,7 @@ export const getStoredActions = () => {
   }
 }
 
-/**
- * Update action progress
- */
+
 export const updateActionProgress = (actionId, progressData) => {
   const actions = getStoredActions()
   const actionIndex = actions.findIndex(action => action.id === actionId)
@@ -132,7 +123,7 @@ export const updateActionProgress = (actionId, progressData) => {
   action.progress = progressData.progress
   action.updatedAt = new Date().toISOString()
   
-  // Auto-complete if progress reaches 100%
+  
   if (progressData.progress >= 100) {
     action.status = 'completed'
   }
@@ -142,9 +133,7 @@ export const updateActionProgress = (actionId, progressData) => {
   return action
 }
 
-/**
- * Update action status
- */
+
 export const updateActionStatus = (actionId, status) => {
   const actions = getStoredActions()
   const actionIndex = actions.findIndex(action => action.id === actionId)
@@ -158,9 +147,7 @@ export const updateActionStatus = (actionId, status) => {
   return actions[actionIndex]
 }
 
-/**
- * Delete an action
- */
+
 export const deleteAction = (actionId) => {
   const actions = getStoredActions()
   const filteredActions = actions.filter(action => action.id !== actionId)
@@ -168,9 +155,7 @@ export const deleteAction = (actionId) => {
   return true
 }
 
-/**
- * Get action statistics
- */
+
 export const getActionStats = () => {
   const actions = getStoredActions()
   const totalActions = actions.length
@@ -197,25 +182,23 @@ export const getActionStats = () => {
   }
 }
 
-/**
- * Clear all actions (for development/reset)
- */
+
 export const clearAllActions = () => {
   localStorage.removeItem(ACTIONS_STORAGE_KEY)
   return true
 }
 
-// Estimate consumption helper (daily-based for user-friendly input)
+
 export const estimateConsumption = (inputs) => {
-  // inputs: { carMilesDaily, flightsPerYear, electricityKWhDaily }
+  
   const milesDaily = Number(inputs.carMilesDaily) || 0
   const flightsPerYear = Number(inputs.flightsPerYear) || 0
   const electricityKWhDaily = Number(inputs.electricityKWhDaily) || 0
 
-  // Rough emission factors (tons CO2)
-  const tonPerMile = 0.000404 // ~404 g CO2 per mile -> 0.000404 tons
-  const tonPerFlight = 0.15 // conservative short flight estimate
-  const tonPerKWh = 0.000233 // approx tons per kWh
+  
+  const tonPerMile = 0.000404 
+  const tonPerFlight = 0.15 
+  const tonPerKWh = 0.000233 
 
   const annualMiles = milesDaily * 365
   const carCO2 = annualMiles * tonPerMile
@@ -230,7 +213,7 @@ export const estimateConsumption = (inputs) => {
 
   return {
     annual_co2_tons: totalAnnualCO2,
-    daily_co2_kg: +(totalAnnualCO2 * 1000 / 365).toFixed(2), // Convert to daily kg
+    daily_co2_kg: +(totalAnnualCO2 * 1000 / 365).toFixed(2), 
     breakdown: {
       car: +carCO2.toFixed(2),
       flights: +flightCO2.toFixed(2),
@@ -240,7 +223,7 @@ export const estimateConsumption = (inputs) => {
   }
 }
 
-// Helper functions
+
 const generateActionId = () => {
   return 'action_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)
 }

@@ -33,7 +33,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+          {}
           <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <Link
@@ -55,7 +55,7 @@ const Navbar = () => {
             <DarkModeToggle className="ml-2" />
           </div>
 
-          {/* Mobile menu button and dark mode toggle */}
+          {}
           <div className="md:hidden flex items-center space-x-2">
             <DarkModeToggle />
             <button
@@ -68,7 +68,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {}
       {isOpen && (
         <div className="md:hidden">
           <div className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 ${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'} border-t transition-colors duration-300`}>

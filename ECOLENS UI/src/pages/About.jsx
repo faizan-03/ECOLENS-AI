@@ -28,7 +28,7 @@ const About = () => {
   return (
     <div className={`min-h-screen py-12 ${isDarkMode ? 'bg-gray-900' : 'bg-gradient-to-b from-white to-gray-50'}`}>
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        {/* Hero Section */}
+        {}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <Leaf className="h-10 w-10 text-green-500" />
@@ -39,7 +39,7 @@ const About = () => {
           </p>
         </div>
 
-        {/* Features Section */}
+        {}
         <section className="mb-16">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
@@ -66,7 +66,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Call to Action */}
+        {}
         <section className={`${isDarkMode ? 'text-center bg-gray-800 border border-gray-700 shadow-md rounded-lg py-10 px-6' : 'text-center bg-white shadow-md rounded-lg py-10 px-6'}`}>
           <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-gray-900'} mb-4`}>Ready to Explore Your Climate Impact?</h2>
           <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-6 max-w-xl mx-auto`}>

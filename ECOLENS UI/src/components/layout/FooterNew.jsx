@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className={`${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} border-t ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo and Description */}
+          {}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-3">
               <Leaf className={`h-6 w-6 ${isDarkMode ? 'text-green-400' : 'text-green-500'}`} />
@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Connect */}
+          {}
           <div>
             <h3 className="text-sm font-medium mb-3">Connect</h3>
             <div className="flex space-x-4">

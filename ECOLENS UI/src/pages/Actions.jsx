@@ -40,7 +40,7 @@ const Actions = () => {
     setStats(actionStats)
   }
 
-  // Quick consumption estimate state
+  
   const [estimateInputs, setEstimateInputs] = useState({
     carMilesDaily: '',
     flightsPerYear: '',
@@ -106,7 +106,7 @@ const Actions = () => {
   }
 
   const getImpactColor = (impact) => {
-    // Provide dark-mode friendly color tokens as well
+    
     switch (impact.toLowerCase()) {
       case 'high':
         return isDarkMode ? 'bg-red-800 text-red-200' : 'bg-red-100 text-red-800'
@@ -119,13 +119,13 @@ const Actions = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* Header */}
+      {}
       <div className="mb-8">
         <h1 className={`text-3xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-gray-900'} mb-2`}>Climate Action Plans</h1>
         <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Create, track, and measure your climate impact journey</p>
       </div>
 
-      {/* Quick Consumption Estimate - Separate Cards */}
+      {}
       <div className="mb-8">
         <div className="text-center mb-6">
           <h2 className={`text-2xl font-bold ${isDarkMode ? 'text-gray-100' : 'text-gray-900'} mb-2`}>Know Your Daily Impact</h2>
@@ -133,7 +133,7 @@ const Actions = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          {/* Car Usage Card */}
+          {}
           <Card className="text-center">
             <CardHeader className="pb-3">
               <div className="mx-auto w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
@@ -153,7 +153,7 @@ const Actions = () => {
             </CardContent>
           </Card>
 
-          {/* Flights Card */}
+          {}
           <Card className="text-center">
             <CardHeader className="pb-3">
               <div className="mx-auto w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-2">
@@ -173,7 +173,7 @@ const Actions = () => {
             </CardContent>
           </Card>
 
-          {/* Electricity Card */}
+          {}
           <Card className="text-center">
             <CardHeader className="pb-3">
               <div className="mx-auto w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mb-2">
@@ -194,7 +194,7 @@ const Actions = () => {
           </Card>
         </div>
 
-        {/* Estimate Results */}
+        {}
         <div className="text-center">
           <div className="flex gap-3 justify-center items-center mb-4">
             <Button onClick={runEstimate}>Calculate Impact</Button>
@@ -228,7 +228,7 @@ const Actions = () => {
         </div>
       </div>
 
-      {/* Statistics Cards */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <Card>
           <CardContent className="p-6">
@@ -281,7 +281,7 @@ const Actions = () => {
         </Card>
       </div>
 
-      {/* Action Templates Section */}
+      {}
       <Card className="mb-8">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -322,7 +322,7 @@ const Actions = () => {
         </CardContent>
       </Card>
 
-      {/* Create Action Form */}
+      {}
       {showCreateForm && (
         <Card className="mb-8">
           <CardHeader>
@@ -437,7 +437,7 @@ const Actions = () => {
         </Card>
       )}
 
-      {/* Actions List */}
+      {}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold text-gray-900">
           Your Action Plans ({actions.length})
@@ -495,7 +495,7 @@ const Actions = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {/* Progress Bar */}
+                  {}
                   <div>
                         <div className="flex items-center justify-between mb-2">
                           <span className={`${isDarkMode ? 'text-gray-300' : 'text-sm font-medium text-gray-700'}`}>Progress</span>
@@ -509,7 +509,7 @@ const Actions = () => {
                         </div>
                   </div>
 
-                  {/* Progress Controls */}
+                  {}
                   <div className="flex items-center gap-2">
                       <input
                         type="range"
@@ -521,7 +521,7 @@ const Actions = () => {
                       />
                   </div>
 
-                  {/* Action Details */}
+                  {}
                   <div className="flex items-center justify-between text-sm text-gray-600">
                     <div className="flex items-center gap-4">
                       {action.co2Savings && (
