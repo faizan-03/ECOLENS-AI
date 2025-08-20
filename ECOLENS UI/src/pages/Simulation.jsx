@@ -397,40 +397,42 @@ const Simulation = () => {
               </CardContent>
             </Card>
 
-            {/* Impact Summary */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Impact Summary</CardTitle>
-                <CardDescription>Key changes expected by {selectedYear}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className={`p-4 ${isDarkMode ? 'bg-gray-800/40 text-gray-300' : 'bg-muted/50'} rounded-lg`}>
-                    <h4 className="font-medium mb-2">Environmental Changes</h4>
-                    <ul className={`${isDarkMode ? 'text-gray-300' : 'text-sm text-muted-foreground'} space-y-1`}>
-                      <li>• More frequent extreme weather events</li>
-                      <li>• Shifts in precipitation patterns</li>
-                      <li>• Arctic ice loss acceleration</li>
-                      <li>• Ocean acidification increase</li>
-                    </ul>
+            {/* Impact Summary - Centered with reduced height */}
+            <div className="flex justify-center">
+              <Card className="max-w-2xl w-full">
+                <CardHeader className="pb-3">
+                  <CardTitle>Impact Summary</CardTitle>
+                  <CardDescription>Key changes expected by {selectedYear}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className={`p-3 ${isDarkMode ? 'bg-gray-800/40 text-gray-300' : 'bg-muted/50'} rounded-lg`}>
+                      <h4 className="font-medium mb-2 text-sm">Environmental Changes</h4>
+                      <ul className={`${isDarkMode ? 'text-gray-300' : 'text-sm text-muted-foreground'} space-y-1 text-xs`}>
+                        <li>• Extreme weather events</li>
+                        <li>• Precipitation pattern shifts</li>
+                        <li>• Arctic ice loss</li>
+                      </ul>
+                    </div>
+                    
+                    <div className={`p-3 ${isDarkMode ? 'bg-gray-800/40 text-gray-300' : 'bg-muted/50'} rounded-lg`}>
+                      <h4 className="font-medium mb-2 text-sm">Societal Impact</h4>
+                      <ul className={`${isDarkMode ? 'text-gray-300' : 'text-sm text-muted-foreground'} space-y-1 text-xs`}>
+                        <li>• Coastal communities at risk</li>
+                        <li>• Agricultural changes</li>
+                        <li>• Water resource stress</li>
+                      </ul>
+                    </div>
                   </div>
-                  
-                  <div className={`p-4 ${isDarkMode ? 'bg-gray-800/40 text-gray-300' : 'bg-muted/50'} rounded-lg`}>
-                    <h4 className="font-medium mb-2">Societal Impact</h4>
-                    <ul className={`${isDarkMode ? 'text-gray-300' : 'text-sm text-muted-foreground'} space-y-1`}>
-                      <li>• Coastal communities at risk</li>
-                      <li>• Agricultural productivity changes</li>
-                      <li>• Water resource stress</li>
-                      <li>• Climate migration patterns</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
 
-            <Button className="w-full" size="lg">
-              Generate Detailed Report
-            </Button>
+            <div className="flex justify-center">
+              <Button className="block w-full max-w-xs sm:max-w-md" size="lg">
+                Generate Detailed Report
+              </Button>
+            </div>
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@ const Footer = () => {
         <div className={`mt-6 pt-6 border-t ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className={`text-xs flex items-center ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-              © 2025 ECOLENS AI. Made with <FaHeart className="h-3 w-3 text-red-500 mx-1" /> for our planet.
+              All Copyright © reserved ECOLENS AI 2025
             </p>
             <div className="flex space-x-4 mt-2 sm:mt-0">
               <Link to="#" className={`text-xs ${isDarkMode ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-700'}`}>

@@ -34,7 +34,6 @@
                 |-- Loader.jsx
             |-- layout
                 |-- Footer.jsx
-                |-- FooterNew.jsx
                 |-- Navbar.jsx
         |-- context
             |-- ThemeContext.jsx
@@ -63,3 +62,4 @@
     |-- tailwind.config.js
     |-- vite.config.js
 |-- README.md
+|-- remove-comments.js
