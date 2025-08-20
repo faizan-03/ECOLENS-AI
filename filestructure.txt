@@ -20,6 +20,8 @@
     |-- package.json
     |-- postcss.config.js
     |-- public
+        |-- favicon.svg
+        |-- leaf-icon.svg
         |-- manifest.json
         |-- robots.txt
         |-- sitemap.xml
@@ -65,4 +67,3 @@
     |-- tailwind.config.js
     |-- vite.config.js
 |-- README.md
-|-- remove-comments.js
